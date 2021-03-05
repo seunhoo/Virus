@@ -56,6 +56,6 @@ void Object::Render()
 {
 }
 
-void Object::OnCollision(Object* other)
+void Object::OnCollision(Object* other, std::string tag)
 {
 }

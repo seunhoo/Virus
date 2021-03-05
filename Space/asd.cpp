@@ -3,7 +3,7 @@
 
 asd::asd()
 {
-	asdf = Sprite::Create(L"Painting/BG.png");
+	asdf = Sprite::Create(L"Painting/BG1.png");
 	asdf->SetParent(this);
 	SetPosition(1920 / 2, 1080 / 2);
 }

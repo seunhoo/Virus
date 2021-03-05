@@ -3,7 +3,7 @@
 
 VLine::VLine(float posx, float posy)
 {
-	m_VLine = Sprite::Create(L"Painting/VLine.png");
+	m_VLine = Sprite::Create(L"Painting/VLine1.png");
 	m_VLine->SetParent(this);
 	SetPosition(posx, posy);
 }

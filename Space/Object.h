@@ -30,7 +30,7 @@ protected:
 public:
 	virtual void Update(float deltaTime, float time);
 	virtual void Render();
-	virtual void OnCollision(Object* other);
+	virtual void OnCollision(Object* other,std::string tag);
 
 public:
 	void SetPosition(float x, float y);

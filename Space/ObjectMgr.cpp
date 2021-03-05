@@ -65,8 +65,8 @@ void ObjectMgr::CollisionCheak(Object* obj, const std::string tag)
 			RECT rc;
 			if (IntersectRect(&rc, &obj->m_Collision, &iter->m_Collision))
 			{
-				obj->OnCollision(iter);
-				iter->OnCollision(obj);
+				obj->OnCollision(iter,iter->m_Tag);
+				iter->OnCollision(obj,obj->m_Tag);
 			}
 		}
 	}

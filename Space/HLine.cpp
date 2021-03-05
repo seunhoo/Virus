@@ -3,7 +3,7 @@
 
 HLine::HLine(float posx, float posy)
 {
-	m_HLine = Sprite::Create(L"Painting/HLine.png");
+	m_HLine = Sprite::Create(L"Painting/HLine1.png");
 	m_HLine->SetParent(this);
 
 	SetPosition(posx, posy);
