@@ -11,6 +11,7 @@ VLine::VLine(float posx, float posy)
 void VLine::Update(float deltatime, float time)
 {
 	//printf("%f %f \n", m_Position.x, m_Position.y);
+	ObjMgr->CollisionCheak(this, "Player");
 }
 
 void VLine::Render()
@@ -20,4 +21,11 @@ void VLine::Render()
 
 void VLine::OnCollision(Object* obj, std::string tag)
 {
+	if (tag == "Player")
+	{
+		m_VLine->A--;
+		m_VLine->R = 0;
+		m_VLine->G = 0;
+		m_VLine->B = 0;
+	}
 }

@@ -22,16 +22,35 @@ Player::Player()
 	{
 		randomX = rand() % 1920 + 0;
 		randomY = 1080;
+
+		if (randomX % 10 != 0)
+		{
+			for (; randomX % 10 != 0;)
+			{
+				randomX--;
+			}
+		}
 	}
 	if (randomy == 1)
 	{
 		randomX = 0;
 		randomY = rand() % 1080 + 0;
+
 	}
 	else
 	{
 		randomX = 1920;
 		randomY = rand() % 1080 + 0;
+
+		if (randomY % 10 != 0) 
+		{
+			for (; randomY % 10 != 0;)
+			{
+				randomY--;
+			}
+		}
+
+
 	}
 	SetPosition(randomX, randomY);
 }
@@ -40,35 +59,47 @@ void Player::Update(float deltatime, float time)
 {
 	ObjMgr->CollisionCheak(this, "VLine");
 	ObjMgr->CollisionCheak(this, "HLine");
-	if (INPUT->GetKey(VK_UP) == KeyState::PRESS && m_UpCheck == true)
+	if (INPUT->GetKey(VK_UP) == KeyState::PRESS && m_UpCheck == true && (int)m_Position.x % 120 == 0)
 	{
-		m_Position.y -= 10;
+		if(m_Position.y >=10)
+ 			m_Position.y -= 10;
 	}
 
-	if (INPUT->GetKey(VK_DOWN) == KeyState::PRESS && m_DownCheck == true)
+	if (INPUT->GetKey(VK_DOWN) == KeyState::PRESS && m_DownCheck == true && (int)m_Position.x % 120 == 0)
 	{
-		m_Position.y += 10;
+		if (m_Position.y <= 1070)
+			m_Position.y += 10;
 	}
 
-	if (INPUT->GetKey(VK_LEFT) == KeyState::PRESS && m_LeftCheck == true)
+	if (INPUT->GetKey(VK_LEFT) == KeyState::PRESS && m_LeftCheck == true && (int)m_Position.y % 90 == 0)
 	{
-		m_Position.x -= 10;
+		if (m_Position.x >= 10)
+			m_Position.x -= 10;
 	}
 
-	if (INPUT->GetKey(VK_RIGHT) == KeyState::PRESS && m_RightCheck == true)
+	if (INPUT->GetKey(VK_RIGHT) == KeyState::PRESS && m_RightCheck == true && (int)m_Position.y % 90 == 0)
 	{
-		m_Position.x += 10;
+		if (m_Position.x <= 1910)
+			m_Position.x += 10;
 	}
 
 
-	if ((m_Position.x /50) * 50 < 0 && (m_Position.y / 50) * 50 < 0)
-		SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50 - 50);
-	else if ((m_Position.x / 50) * 50 < 0)
-		SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50);
-	else if ((m_Position.y / 50) * 50 < 0)
-		SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50 - 50);
-	else
-		SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50);
+	//if ((m_Position.x / 50) * 50 < 0 && (m_Position.y / 50) * 50 < 0)
+	//{
+	//	SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50 - 50);
+	//}
+	//else if ((m_Position.x / 50) * 50 < 0)
+	//{
+	//	SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50);
+	//}
+	//else if ((m_Position.y / 50) * 50 < 0)
+	//{
+	//	SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50 - 50);
+	//}
+	//else
+	//{
+	//	SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50);
+	//}
 
 }
 

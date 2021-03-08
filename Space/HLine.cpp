@@ -11,6 +11,7 @@ HLine::HLine(float posx, float posy)
 
 void HLine::Update(float deltatime, float time)
 {
+	ObjMgr->CollisionCheak(this, "Player");
 }
 
 void HLine::Render()
@@ -20,4 +21,8 @@ void HLine::Render()
 
 void HLine::OnCollision(Object* obj, std::string tag)
 {
+	if (tag == "Player")
+	{
+		m_HLine->R = 0;
+	}
 }
