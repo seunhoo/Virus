@@ -31,6 +31,9 @@
     <Filter Include="Game\Object\NewFilter2">
       <UniqueIdentifier>{052a30e8-c5b1-430d-9d84-9d6fc57e3846}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Object\NewFilter3">
+      <UniqueIdentifier>{f1e9a08b-f0af-47e3-83f7-e5c82008d23f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Space.cpp">
@@ -99,6 +102,18 @@
     <ClCompile Include="Player.cpp">
       <Filter>Game\Object\NewFilter2</Filter>
     </ClCompile>
+    <ClCompile Include="Defence.cpp">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="Heal.cpp">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="Speed.cpp">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -166,6 +181,18 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Object\NewFilter2</Filter>
+    </ClInclude>
+    <ClInclude Include="Defence.h">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="Heal.h">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="Speed.h">
+      <Filter>Game\Object\NewFilter3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

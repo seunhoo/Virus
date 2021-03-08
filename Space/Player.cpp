@@ -73,7 +73,7 @@ void Player::Update(float deltatime, float time)
 
 	if (INPUT->GetKey(VK_LEFT) == KeyState::PRESS && m_LeftCheck == true && (int)m_Position.y % 90 == 0)
 	{
-		if (m_Position.x >= 10)
+		if (m_Position.x >= 9)
 			m_Position.x -= 10;
 	}
 
