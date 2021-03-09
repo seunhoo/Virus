@@ -39,6 +39,7 @@ inline void SafeDelete(T*& x);
 #include"Camera.h"
 #include"Sprite.h"
 #include"Animation.h"
+#include"ScoreMgr.h"
 
 template<class T>
 inline void SafeDelete(T*& x)

@@ -34,6 +34,9 @@
     <Filter Include="Game\Object\NewFilter3">
       <UniqueIdentifier>{f1e9a08b-f0af-47e3-83f7-e5c82008d23f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Object\NewFilter4">
+      <UniqueIdentifier>{b0788078-8b89-4e37-8b2b-139cc8e5c30d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Space.cpp">
@@ -117,6 +120,21 @@
     <ClCompile Include="Line.cpp">
       <Filter>Game\Object\NewFilter2</Filter>
     </ClCompile>
+    <ClCompile Include="Intro.cpp">
+      <Filter>Game\Object\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSelect.cpp">
+      <Filter>Game\Object\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Game\Object\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreMgr.cpp">
+      <Filter>Game\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Game\Object\NewFilter4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -199,6 +217,21 @@
     </ClInclude>
     <ClInclude Include="Line.h">
       <Filter>Game\Object\NewFilter2</Filter>
+    </ClInclude>
+    <ClInclude Include="Intro.h">
+      <Filter>Game\Object\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSelect.h">
+      <Filter>Game\Object\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Game\Object\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreMgr.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Game\Object\NewFilter4</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

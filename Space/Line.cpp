@@ -10,13 +10,16 @@ Line::Line(bool vh, float posx,float posy)
 
 	m_Line->SetParent(this);
 
+	
 	SetPosition(posx, posy);
 
+	m_Line->m_Layer = 0;
 
 }
 
 void Line::Update(float deltatime, float time)
 {
+	printf("%d \n", m_Line->m_Layer);
 }
 
 void Line::Render()

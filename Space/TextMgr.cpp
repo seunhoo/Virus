@@ -15,7 +15,7 @@ TextMgr::TextMgr()
 
 bool TextMgr::Init(int height, const std::string& fontname)
 {
-	UINT weight = FW_NORMAL;
+	UINT weight = FW_BOLD;
 
 
 	std::wstring temp = std::wstring(fontname.begin(), fontname.end());

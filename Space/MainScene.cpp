@@ -4,6 +4,7 @@
 #include"VLine.h"
 #include"HLine.h"
 #include"Player.h"
+#include"Monster.h"
 
 MainScene::MainScene()
 	:m_Check(false)
@@ -34,23 +35,22 @@ void MainScene::Update(float deltaTime, float time)
 			ObjMgr->AddObject(new HLine(1920/2, j), "HLine");
 		}
 		for (int i = 0; i <= 1920; i += 120)
-		{
+		{ 
 			printf("%d \n", i);
 			ObjMgr->AddObject(new VLine(i, 1080 / 2), "VLine");
 
 			if (i >= 1920)
 			{
+				ObjMgr->AddObject(new Monster(1), "Monster");
 				ObjMgr->AddObject(new Player(), "Player");
 				m_Check = true;
 			}
-
-
-
 		}
-		
-
-
 	}
+
+
+
+
 
 }
 

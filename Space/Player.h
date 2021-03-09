@@ -4,8 +4,10 @@ class Player : public Object
 public:
 
 	Sprite* m_Player;
-
+	TextMgr* m_Text;
 public:
+
+	int m_PlayerHp;
 
 	bool m_UpCheck;
 	bool m_RightCheck;

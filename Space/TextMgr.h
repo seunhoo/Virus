@@ -1,5 +1,5 @@
 #pragma once
-class TextMgr
+class TextMgr 
 {
 private:
 	D3DXCOLOR m_Color;
