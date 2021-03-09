@@ -114,6 +114,9 @@
     <ClCompile Include="Speed.cpp">
       <Filter>Game\Object\NewFilter3</Filter>
     </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Game\Object\NewFilter2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -193,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="Speed.h">
       <Filter>Game\Object\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Game\Object\NewFilter2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

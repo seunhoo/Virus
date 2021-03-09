@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include "Line.h"
+
+Line::Line(bool vh, float posx,float posy)
+{
+	if (vh == true)
+		m_Line = Sprite::Create(L"Painting/line.png");
+	else
+		m_Line = Sprite::Create(L"Painting/line2.png");
+
+	m_Line->SetParent(this);
+
+	SetPosition(posx, posy);
+
+
+}
+
+void Line::Update(float deltatime, float time)
+{
+}
+
+void Line::Render()
+{
+	m_Line->Render();
+}
+
+void Line::OnCollision(Object* obj, std::string tag)
+{
+}

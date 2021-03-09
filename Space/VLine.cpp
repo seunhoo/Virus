@@ -23,9 +23,6 @@ void VLine::OnCollision(Object* obj, std::string tag)
 {
 	if (tag == "Player")
 	{
-		m_VLine->A--;
-		m_VLine->R = 0;
-		m_VLine->G = 0;
-		m_VLine->B = 0;
+
 	}
 }
