@@ -127,25 +127,6 @@ void Player::Update(float deltatime, float time)
 		}
 
 	}
-
-
-	//if ((m_Position.x / 50) * 50 < 0 && (m_Position.y / 50) * 50 < 0)
-	//{
-	//	SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50 - 50);
-	//}
-	//else if ((m_Position.x / 50) * 50 < 0)
-	//{
-	//	SetPosition((int)(m_Position.x / 50) * 50 - 50, (int)(m_Position.y / 50) * 50);
-	//}
-	//else if ((m_Position.y / 50) * 50 < 0)
-	//{
-	//	SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50 - 50);
-	//}
-	//else
-	//{
-	//	SetPosition((int)(m_Position.x / 50) * 50, (int)(m_Position.y / 50) * 50);
-	//}
-
 }
 
 void Player::Render()
@@ -160,24 +141,5 @@ void Player::Render()
 
 void Player::OnCollision(Object* obj, std::string tag)
 {
-	//if (tag == "VLine")
-	//{
-	//	m_UpCheck = true;
-	//	m_DownCheck = true;
-	//}
-	//else
-	//{
-	//	m_UpCheck = false;
-	//	m_DownCheck = false;
-	//}
-	//if (tag == "HLine")
-	//{
-	//	m_RightCheck = true;
-	//	m_LeftCheck = true;
-	//}
-	//else
-	//{
-	//	m_RightCheck = false;
-	//	m_LeftCheck = false;
-	//}
+	
 }

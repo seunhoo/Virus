@@ -25,6 +25,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Defence.cpp" />
+    <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="Heal.cpp" />
     <ClCompile Include="HLine.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -36,6 +37,7 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -61,6 +63,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Defence.h" />
+    <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Heal.h" />
     <ClInclude Include="HLine.h" />
     <ClInclude Include="Input.h" />
@@ -72,6 +75,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Renderer.h" />

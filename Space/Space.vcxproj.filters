@@ -135,6 +135,12 @@
     <ClCompile Include="Monster.cpp">
       <Filter>Game\Object\NewFilter4</Filter>
     </ClCompile>
+    <ClCompile Include="GameMgr.cpp">
+      <Filter>Game\Mgrs</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Game\Object\NewFilter4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -231,6 +237,12 @@
       <Filter>Game\Mgrs</Filter>
     </ClInclude>
     <ClInclude Include="Monster.h">
+      <Filter>Game\Object\NewFilter4</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMgr.h">
+      <Filter>Game\Mgrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
       <Filter>Game\Object\NewFilter4</Filter>
     </ClInclude>
   </ItemGroup>

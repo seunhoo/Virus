@@ -1,11 +1,11 @@
 #pragma once
-class Defence : public Object
+class Obstacle : public Object
 {
 public:
 
-	Sprite* m_Defence;
+	Sprite* m_Obstacle;
 
-	Defence(float posx,float posy);
+	Obstacle();
 
 	void Update(float deltatime, float time);
 	void Render();

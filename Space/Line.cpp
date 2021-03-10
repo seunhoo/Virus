@@ -19,7 +19,6 @@ Line::Line(bool vh, float posx,float posy)
 
 void Line::Update(float deltatime, float time)
 {
-	printf("%d \n", m_Line->m_Layer);
 }
 
 void Line::Render()

@@ -6,7 +6,11 @@ public:
 	Sprite* m_Monster;
 
 	Monster(int version);
+	
 	int m_Version;
+
+	int x, y, t;
+
 	
 	float m_Speed;
 	float m_MoveCount;

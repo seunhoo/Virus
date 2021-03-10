@@ -2,6 +2,8 @@
 class MainScene : public Scene
 {
 public:
+	Sprite* m_Sprite;
+
 	MainScene();
 	~MainScene();
 

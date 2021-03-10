@@ -10,7 +10,6 @@ VLine::VLine(float posx, float posy)
 
 void VLine::Update(float deltatime, float time)
 {
-	//printf("%f %f \n", m_Position.x, m_Position.y);
 	ObjMgr->CollisionCheak(this, "Player");
 }
 
