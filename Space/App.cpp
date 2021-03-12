@@ -38,9 +38,26 @@ void App::Run()
 		else
 		{
 			Renderer::GetInst()->Begin();
+			//INPUT->Update();
+			if (INPUT->GetKey(VK_F8) == KeyState::DOWN)
+			{
+				if (m_Stop == false)
+				{
+					m_Stop = true;
+				}
+				else if (m_Stop == true)
+				{
+					m_Stop = false;
+				}
+			}
+
+			if (m_Stop == false)
+			{
 			SceneDirector::GetInst()->Update(timeDelta, Time);
-			DeltaTime = timeDelta;
-			Time += timeDelta;
+			}
+				DeltaTime = timeDelta;
+				Time += timeDelta;
+
 			SceneDirector::GetInst()->Render();
 			Renderer::GetInst()->End();
 

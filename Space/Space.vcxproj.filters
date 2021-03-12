@@ -102,21 +102,6 @@
     <ClCompile Include="HLine.cpp">
       <Filter>Game\Object\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Game\Object\NewFilter2</Filter>
-    </ClCompile>
-    <ClCompile Include="Defence.cpp">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClCompile>
-    <ClCompile Include="Heal.cpp">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClCompile>
-    <ClCompile Include="Random.cpp">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClCompile>
-    <ClCompile Include="Speed.cpp">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClCompile>
     <ClCompile Include="Line.cpp">
       <Filter>Game\Object\NewFilter2</Filter>
     </ClCompile>
@@ -140,6 +125,15 @@
     </ClCompile>
     <ClCompile Include="Obstacle.cpp">
       <Filter>Game\Object\NewFilter4</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClCompile>
+    <ClCompile Include="StageTwo.cpp">
+      <Filter>Game\Object\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -206,21 +200,6 @@
     <ClInclude Include="HLine.h">
       <Filter>Game\Object\NewFilter1</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Game\Object\NewFilter2</Filter>
-    </ClInclude>
-    <ClInclude Include="Defence.h">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClInclude>
-    <ClInclude Include="Heal.h">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClInclude>
-    <ClInclude Include="Random.h">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClInclude>
-    <ClInclude Include="Speed.h">
-      <Filter>Game\Object\NewFilter3</Filter>
-    </ClInclude>
     <ClInclude Include="Line.h">
       <Filter>Game\Object\NewFilter2</Filter>
     </ClInclude>
@@ -244,6 +223,15 @@
     </ClInclude>
     <ClInclude Include="Obstacle.h">
       <Filter>Game\Object\NewFilter4</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Game\Object\NewFilter3</Filter>
+    </ClInclude>
+    <ClInclude Include="StageTwo.h">
+      <Filter>Game\Object\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

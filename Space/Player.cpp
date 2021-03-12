@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "Player.h"
 #include"Line.h"
+#include"MenuSelect.h"
+#include"MainScene.h"
+#include"MenuScene.h"
+#include"StageTwo.h"
+#include"Item.h"
 Player::Player()
 	:m_UpCheck(true)
 	,m_RightCheck(true)
@@ -78,6 +83,17 @@ Player::Player()
 
 void Player::Update(float deltatime, float time)
 {
+	ObjMgr->CollisionCheak(this, "Random");
+	ObjMgr->CollisionCheak(this, "Speed");
+	ObjMgr->CollisionCheak(this, "Heal");
+	ObjMgr->CollisionCheak(this, "Invincible");
+	ObjMgr->CollisionCheak(this, "Defence");
+	if (m_Invincible == false)
+	{
+		ObjMgr->CollisionCheak(this, "Monster");
+		ObjMgr->CollisionCheak(this, "Boss");
+	}
+
 	if ((int)m_Position.x % 120 == 60)
 	{
 		ObjMgr->AddObject(new Line(1, m_Position.x, m_Position.y), "Line");
@@ -127,19 +143,96 @@ void Player::Update(float deltatime, float time)
 		}
 
 	}
+	Key();
+	UseItem();
+	if (INPUT->GetKey(VK_F1) == KeyState::DOWN)
+	{
+		if (m_Invincible == true)
+		{
+			m_Invincible = false;
+		}
+		else if (m_Invincible == false)
+		{
+			m_Invincible = true;
+		}
+	}
+	else if (INPUT->GetKey(VK_F2) == KeyState::DOWN)
+	{
+		int random = rand() % 5 + 1;
+		if(random ==1)
+			ObjMgr->AddObject(new Item(1,m_Position.x,m_Position.y), "Speed");
+		else if(random == 2)
+			ObjMgr->AddObject(new Item(2, m_Position.x, m_Position.y), "Heal");
+		else if(random == 3)
+			ObjMgr->AddObject(new Item(3, m_Position.x, m_Position.y), "Invincible");
+		else if(random == 4)
+			ObjMgr->AddObject(new Item(4, m_Position.x, m_Position.y), "Defence");
+		else if(random == 5)
+			ObjMgr->AddObject(new Item(5, m_Position.x, m_Position.y), "Random");
+	}
+	else if (INPUT->GetKey(VK_F3) == KeyState::DOWN)
+	{
+		m_PlayerHp += 1;
+	}
+	else if (INPUT->GetKey(VK_F4) == KeyState::DOWN)
+	{
+		ObjMgr->Release();
+		SceneDirector::GetInst()->ChangeScene(new MenuScene());
+	}
+	else if (INPUT->GetKey(VK_F5) == KeyState::DOWN)
+	{
+		ObjMgr->Release();
+		SceneDirector::GetInst()->ChangeScene(new MainScene());
+	}
+	else if (INPUT->GetKey(VK_F6) == KeyState::DOWN)
+	{
+		ObjMgr->Release();
+		SceneDirector::GetInst()->ChangeScene(new StageTwo());
+	}
 }
 
 void Player::Render()
 {
-	m_Player->Render();
 
 	Renderer::GetInst()->GetSprite()->Begin(D3DXSPRITE_ALPHABLEND);
 	m_Text->print("HP : " + std::to_string(m_PlayerHp), 1700, 30);
 	m_Text->print("Score : " + std::to_string(ScoreMgr::GetInst()->GetScore()), 1920 / 2 - 100, 30);
 	Renderer::GetInst()->GetSprite()->End();
+	m_Player->Render();
+}
+
+void Player::UseItem()
+{
+	
+}
+
+void Player::Key()
+{
+	
 }
 
 void Player::OnCollision(Object* obj, std::string tag)
 {
-	
+	if (tag == "Heal")
+	{
+		m_PlayerHp += 1;
+
+		if (m_PlayerHp >=5)
+		{
+			m_PlayerHp = 5;
+			ScoreMgr::GetInst()->AddScore(100);
+		}
+	}
+	if (tag == "Random")
+	{
+
+	}
+	if (tag == "Defence")
+	{
+
+	}
+	if (tag == "Speed")
+	{
+
+	}
 }

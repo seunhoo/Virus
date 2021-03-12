@@ -14,10 +14,18 @@ public:
 	bool m_LeftCheck;
 	bool m_DownCheck;
 
+	bool m_Invincible;
+
 	Player();
 
 	void Update(float deltatime, float time);
 	void Render();
+
+	void UseItem();
+
+	void Key();
+
+
 	void OnCollision(Object* obj, std::string tag);
 };
 

@@ -24,12 +24,11 @@
     <ClCompile Include="asd.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
-    <ClCompile Include="Defence.cpp" />
     <ClCompile Include="GameMgr.cpp" />
-    <ClCompile Include="Heal.cpp" />
     <ClCompile Include="HLine.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="MenuScene.cpp" />
@@ -39,7 +38,6 @@
     <ClCompile Include="ObjectMgr.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceMgr.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -47,8 +45,8 @@
     <ClCompile Include="ScoreMgr.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="Space.cpp" />
-    <ClCompile Include="Speed.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StageTwo.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -62,12 +60,11 @@
     <ClInclude Include="asd.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CollisionMgr.h" />
-    <ClInclude Include="Defence.h" />
     <ClInclude Include="GameMgr.h" />
-    <ClInclude Include="Heal.h" />
     <ClInclude Include="HLine.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="MainScene.h" />
     <ClInclude Include="MenuScene.h" />
@@ -77,7 +74,6 @@
     <ClInclude Include="ObjectMgr.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Random.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="Scene.h" />
@@ -85,8 +81,8 @@
     <ClInclude Include="ScoreMgr.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SoundMgr.h" />
-    <ClInclude Include="Speed.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StageTwo.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextMgr.h" />
     <ClInclude Include="Texture.h" />
