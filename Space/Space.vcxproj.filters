@@ -135,6 +135,9 @@
     <ClCompile Include="StageTwo.cpp">
       <Filter>Game\Object\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Ranking.cpp">
+      <Filter>Game\Object\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -231,6 +234,9 @@
       <Filter>Game\Object\NewFilter3</Filter>
     </ClInclude>
     <ClInclude Include="StageTwo.h">
+      <Filter>Game\Object\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Ranking.h">
       <Filter>Game\Object\Scene</Filter>
     </ClInclude>
   </ItemGroup>

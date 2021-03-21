@@ -1,5 +1,5 @@
 #pragma once
-class Player : public Object
+class Player : public Object , public Singleton<Player>
 {
 public:
 
@@ -15,6 +15,8 @@ public:
 	bool m_DownCheck;
 
 	bool m_Invincible;
+
+	float m_PlayerSpeed;
 
 	Player();
 

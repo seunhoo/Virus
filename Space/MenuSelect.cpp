@@ -2,6 +2,7 @@
 #include "MenuSelect.h"
 #include"MainScene.h"
 #include"Intro.h"
+#include"Ranking.h"
 
 MenuSelect::MenuSelect(int v)
 {
@@ -42,7 +43,7 @@ MenuSelect::MenuSelect(int v)
 
 void MenuSelect::Update(float deltatime, float time)
 {
-	if (m_V == 1 && CollisionMgr::GetInst()->MouseWithBoxSize(this) && INPUT->GetButtonDown() == true)
+	if (m_V == 1 && CollisionMgr::GetInst()->MouseWithBoxSize(this) && INPUT->GetButtonDown())
 	{
 		ObjMgr->Release();
 		SceneDirector::GetInst()->ChangeScene(new MainScene());
@@ -60,6 +61,7 @@ void MenuSelect::Update(float deltatime, float time)
 	else if (m_V == 4 && CollisionMgr::GetInst()->MouseWithBoxSize(this) && INPUT->GetButtonDown() == true)
 	{
 		ObjMgr->Release();
+		SceneDirector::GetInst()->ChangeScene(new Ranking());
 	}
 }
 

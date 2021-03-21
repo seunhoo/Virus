@@ -12,6 +12,7 @@ Player::Player()
 	,m_LeftCheck(true)
 	,m_DownCheck(true)
 	,m_PlayerHp(5)
+	,m_PlayerSpeed(10)
 {
 
 	m_Player = Sprite::Create(L"Painting/Player.png");
@@ -112,7 +113,7 @@ void Player::Update(float deltatime, float time)
 		if (m_Position.y >= 10)
 		{
 			//ObjMgr->AddObject(new Line(0,m_Position.x,m_Position.y), "Line");
- 			m_Position.y -= 10;
+ 			m_Position.y -= m_PlayerSpeed;
 		}
 	}
 
@@ -121,7 +122,7 @@ void Player::Update(float deltatime, float time)
 		if (m_Position.y <= 1070)
 		{
 			//ObjMgr->AddObject(new Line(0, m_Position.x, m_Position.y), "Line");
-			m_Position.y += 10;
+			m_Position.y += m_PlayerSpeed;
 		}
 	}
 
@@ -130,7 +131,7 @@ void Player::Update(float deltatime, float time)
 		if (m_Position.x >= 9)
 		{
 			//ObjMgr->AddObject(new Line(1, m_Position.x, m_Position.y), "Line");
-			m_Position.x -= 10;
+			m_Position.x -= m_PlayerSpeed;
 		}
 	}
 
@@ -139,7 +140,7 @@ void Player::Update(float deltatime, float time)
 		if (m_Position.x <= 1910)
 		{
 			//ObjMgr->AddObject(new Line(1, m_Position.x , m_Position.y), "Line");
-			m_Position.x += 10;
+			m_Position.x += m_PlayerSpeed;
 		}
 
 	}
