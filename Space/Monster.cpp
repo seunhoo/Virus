@@ -1,12 +1,19 @@
 #include "stdafx.h"
 #include "Monster.h"
-
+#include"Player.h"
 Monster::Monster(int Version)
 	:m_BossCheck(false)
 	,m_MoveCheck(false)
 	,m_MoveCount(0)
 	,x(0),y(0),t(0)
+	,m_CollideCheck(false)
+	,m_CollideTime(0)
+	,dist(30)
+	,disk(30)
+	,disc(30)
+	,didr(30)
 {
+	srand(time(NULL));
 	m_Version = Version;
 	if (Version == 1)
 	{
@@ -55,6 +62,9 @@ Monster::Monster(int Version)
 		SetPosition(randomx, randomy);
 		m_BossCheck = true;
 	}
+
+	m_bPlayer = new Player();
+	
 	
 }
 
@@ -68,6 +78,105 @@ void Monster::Update(float deltatime, float time)
 	{
 		Move();
 	}
+
+	if (m_CollideCheck == true)
+	{
+		m_CollideTime += dt;
+
+		if (m_CollideTime >= 3)
+		{
+			m_CollideTime = 0;
+			m_CollideCheck = false;
+		}
+	}
+
+
+
+	if ((
+		(dist == 0 && disk == 0) ||
+		(dist == 0 && disc == 0) ||
+		(dist == 0 && didr == 0) ||
+		(disc == 0 && didr == 0) ||
+		(disc == 0 && disk == 0) ||
+		(disk == 0 && didr == 0)))
+	{
+		int x1 = m_bPlayer->m_PlayerPos[0].x < m_bPlayer->m_PlayerPos[1].x ? m_bPlayer->m_PlayerPos[0].x : m_bPlayer->m_PlayerPos[1].x;
+		int y1 = m_bPlayer->m_PlayerPos[0].y < m_bPlayer->m_PlayerPos[1].y ? m_bPlayer->m_PlayerPos[0].y : m_bPlayer->m_PlayerPos[1].y;
+		int x2 = m_bPlayer->m_PlayerPos[0].x > m_bPlayer->m_PlayerPos[1].x ? m_bPlayer->m_PlayerPos[0].x : m_bPlayer->m_PlayerPos[1].x;
+		int y2 = m_bPlayer->m_PlayerPos[0].y > m_bPlayer->m_PlayerPos[1].y ? m_bPlayer->m_PlayerPos[0].y : m_bPlayer->m_PlayerPos[1].y;
+
+		int x3 = m_bPlayer->m_PlayerPos[1].x < m_bPlayer->m_PlayerPos[2].x ? m_bPlayer->m_PlayerPos[1].x : m_bPlayer->m_PlayerPos[2].x;
+		int y3 = m_bPlayer->m_PlayerPos[1].y < m_bPlayer->m_PlayerPos[2].y ? m_bPlayer->m_PlayerPos[1].y : m_bPlayer->m_PlayerPos[2].y;
+		int x4 = m_bPlayer->m_PlayerPos[1].x > m_bPlayer->m_PlayerPos[2].x ? m_bPlayer->m_PlayerPos[1].x : m_bPlayer->m_PlayerPos[2].x;
+		int y4 = m_bPlayer->m_PlayerPos[1].y > m_bPlayer->m_PlayerPos[2].y ? m_bPlayer->m_PlayerPos[1].y : m_bPlayer->m_PlayerPos[2].y;
+
+		int x5 = m_bPlayer->m_PlayerPos[2].x < m_bPlayer->m_PlayerPos[3].x ? m_bPlayer->m_PlayerPos[2].x : m_bPlayer->m_PlayerPos[3].x;
+		int y5 = m_bPlayer->m_PlayerPos[2].y < m_bPlayer->m_PlayerPos[3].y ? m_bPlayer->m_PlayerPos[2].y : m_bPlayer->m_PlayerPos[3].y;
+		int x6 = m_bPlayer->m_PlayerPos[2].x > m_bPlayer->m_PlayerPos[3].x ? m_bPlayer->m_PlayerPos[2].x : m_bPlayer->m_PlayerPos[3].x;
+		int y6 = m_bPlayer->m_PlayerPos[2].y > m_bPlayer->m_PlayerPos[3].y ? m_bPlayer->m_PlayerPos[2].y : m_bPlayer->m_PlayerPos[3].y;
+
+		int x7 = m_bPlayer->m_PlayerPos[3].x < m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
+		int y7 = m_bPlayer->m_PlayerPos[3].y < m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
+		int x8 = m_bPlayer->m_PlayerPos[3].x > m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
+		int y8 = m_bPlayer->m_PlayerPos[3].y > m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
+
+		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 10)
+		{
+			if (m_CollideCheck == false)
+			{
+				m_bPlayer->m_PlayerHp -= 1;
+			}
+			m_CollideCheck = true;
+		}
+		else if (disc < 5 && m_Position.x >= x3 - 5 && m_Position.x <= x4 + 5 && m_Position.y >= y3 - 5 && m_Position.y <= y4 + 5)
+		{
+			if (m_CollideCheck == false)
+			{
+				m_bPlayer->m_PlayerHp -= 1;
+			}
+			m_CollideCheck = true;
+		}
+		else if (disk < 5 && m_Position.x >= x5 - 5 && m_Position.x <= x6 + 5 && m_Position.y >= y5 - 5 && m_Position.y <= y6 + 5)
+		{
+			if (m_CollideCheck == false)
+			{
+				m_bPlayer->m_PlayerHp -= 1;
+			}
+			m_CollideCheck = true;
+		}
+		else if (didr < 5 && m_Position.x >= x7 - 5 && m_Position.x <= x8 + 5 && m_Position.y >= y7 - 5 && m_Position.y <= y8 + 5)
+		{
+			if (m_CollideCheck == false)
+			{
+				m_bPlayer->m_PlayerHp -= 1;
+			}
+			m_CollideCheck = true;
+		}
+		else
+		{
+		}
+	}
+	a = m_bPlayer->m_PlayerPos[0].y - m_bPlayer->m_PlayerPos[1].y;
+	b = m_bPlayer->m_PlayerPos[1].x - m_bPlayer->m_PlayerPos[0].x;
+	c = m_bPlayer->m_PlayerPos[0].x * m_bPlayer->m_PlayerPos[1].y - m_bPlayer->m_PlayerPos[1].x * m_bPlayer->m_PlayerPos[0].y;
+	dist = (float)std::abs(a * m_Position.x + b * m_Position.y + c) / (float)std::sqrt(a * a + b * b);
+
+	d = m_bPlayer->m_PlayerPos[1].y - m_bPlayer->m_PlayerPos[2].y;
+	e = m_bPlayer->m_PlayerPos[2].x - m_bPlayer->m_PlayerPos[1].x;
+	f = m_bPlayer->m_PlayerPos[1].x * m_bPlayer->m_PlayerPos[2].y - m_bPlayer->m_PlayerPos[2].x * m_bPlayer->m_PlayerPos[1].y;
+	disk = (float)std::abs(d * m_Position.x + e * m_Position.y + f) / (float)std::sqrt(d * d + e * e);
+
+	g = m_bPlayer->m_PlayerPos[2].y - m_bPlayer->m_PlayerPos[3].y;
+	h = m_bPlayer->m_PlayerPos[3].x - m_bPlayer->m_PlayerPos[2].x;
+	j = m_bPlayer->m_PlayerPos[2].x * m_bPlayer->m_PlayerPos[3].y - m_bPlayer->m_PlayerPos[3].x * m_bPlayer->m_PlayerPos[2].y;
+	disc = (float)std::abs(g * m_Position.x + h * m_Position.y + j) / (float)std::sqrt(g * g + h * h);
+
+	k = m_bPlayer->m_PlayerPos[3].y - m_bPlayer->m_PlayerPos[4].y;
+	l = m_bPlayer->m_PlayerPos[4].x - m_bPlayer->m_PlayerPos[3].x;
+	m = m_bPlayer->m_PlayerPos[3].x * m_bPlayer->m_PlayerPos[4].y - m_bPlayer->m_PlayerPos[4].x * m_bPlayer->m_PlayerPos[3].y;
+	didr = (float)std::abs(k * m_Position.x + l * m_Position.y + m) / (float)std::sqrt(k * k + l * l);
+
+
 }
 
 void Monster::Boss()
@@ -253,6 +362,8 @@ void Monster::Move()
 
 		}
 	}
+
+
 }
 
 void Monster::Render()

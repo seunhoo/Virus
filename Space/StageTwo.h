@@ -4,6 +4,8 @@ class StageTwo : public Scene
 {
 public:
 
+	Sprite* m_Back;
+
 	bool m_Check;
 
 	StageTwo();

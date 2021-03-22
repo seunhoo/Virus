@@ -7,20 +7,31 @@
 #include"Player.h"
 
 StageTwo::StageTwo()
+	:m_Check(false)
 {
 }
 
 void StageTwo::Init()
 {
+
+}
+
+void StageTwo::Release()
+{
+}
+
+void StageTwo::Update(float deltatime, float time)
+{
 	if (m_Check == false)
 	{
+		printf("topw");
 		for (int j = 0; j <= 1080; j += 60)
 		{
-			ObjMgr->AddObject(new HLine(1920 / 2, j), "HLine");
+			//ObjMgr->AddObject(new HLine(1920 / 2, j), "HLine");
 		}
 		for (int i = 0; i <= 1920; i += 120)
 		{
-			ObjMgr->AddObject(new VLine(i, 1080 / 2), "VLine");
+			//ObjMgr->AddObject(new VLine(i, 1080 / 2), "VLine");
 
 			if (i >= 1920)
 			{
@@ -36,14 +47,6 @@ void StageTwo::Init()
 			}
 		}
 	}
-}
-
-void StageTwo::Release()
-{
-}
-
-void StageTwo::Update(float deltatime, float time)
-{
 }
 
 void StageTwo::Render()

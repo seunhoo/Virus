@@ -19,7 +19,7 @@ MainScene::~MainScene()
 void MainScene::Init()
 {
 	//ObjMgr->AddObject(new asd(), "123");
-	m_Sprite = Sprite::Create(L"Painting/BG2.png");
+	m_Sprite = Sprite::Create(L"Painting/Back.png");
 	m_Sprite->SetPosition(1920 / 2, 1080 / 2);
 
 }
@@ -63,4 +63,5 @@ void MainScene::Update(float deltaTime, float time)
 
 void MainScene::Render()
 {
+	m_Sprite->Render();
 }

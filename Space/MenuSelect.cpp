@@ -33,7 +33,7 @@ MenuSelect::MenuSelect(int v)
 	}
 	else if (v == 5)
 	{
-		m_Select = Sprite::Create(L"Painting/Back.png");
+		m_Select = Sprite::Create(L"Painting/BG.png");
 		m_Select->SetParent(this);
 		SetPosition(1920/2, 1080/2);
 	}

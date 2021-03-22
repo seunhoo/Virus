@@ -13,7 +13,7 @@ Obstacle::Obstacle()
 
 void Obstacle::Update(float deltatime, float time)
 {
-	printf("%f %f \n", m_Position.x, m_Position.y);
+	//printf("%f %f \n", m_Position.x, m_Position.y);
 }
 
 void Obstacle::Render()

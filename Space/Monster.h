@@ -1,9 +1,12 @@
 #pragma once
+class Player;
 class Monster : public Object
 {
 public:
 
 	Sprite* m_Monster;
+
+	Player* m_bPlayer;
 
 	Monster(int version);
 	
@@ -15,6 +18,12 @@ public:
 	float m_Speed;
 	float m_MoveCount;
 	float m_ResetCount;
+
+	float dist, disc,didr,disk;
+	float a, b, c, d, e, f, g, h, j, k, l, m, n;
+
+	bool m_CollideCheck;
+	float m_CollideTime;
 
 	bool m_MoveCheck;
 	bool m_BossCheck;

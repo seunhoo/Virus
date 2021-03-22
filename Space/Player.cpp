@@ -73,14 +73,14 @@ Player::Player()
 
 
 	}
-	printf("%d %d %d %d \n", randomx, randomy, randomX, randomY);
+	//printf("%d %d %d %d \n", randomx, randomy, randomX, randomY);
 	m_Layer = 100;
 
 	SetPosition(randomX,randomY);
 
 	m_Line = new LineMgr();
 	m_Line->Init(3, 1);
-	m_Line->SetColor(D3DCOLOR_ARGB(255, 255, 0, 0));
+	m_Line->SetColor(D3DCOLOR_ARGB(255, 0, 255, 255));
 	memset(m_PlayerPos, 0, sizeof(m_PlayerPos));
 	m_PlayerPos[0].x = randomX;
 	m_PlayerPos[0].y = randomY;
@@ -89,7 +89,7 @@ Player::Player()
 
 	m_Text = new TextMgr();
 	m_Text->Init(45,"±¼¸²Ã¼");
-	m_Text->SetColor(255, 255, 0, 0);
+	m_Text->SetColor(255, 255, 0, 255);
 }
 
 void Player::Update(float deltatime, float time)

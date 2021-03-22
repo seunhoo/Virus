@@ -8,11 +8,11 @@ MenuScene::MenuScene()
 
 void MenuScene::Init()
 {
+	ObjMgr->AddObject(new MenuSelect(5), "1");
 	ObjMgr->AddObject(new MenuSelect(1), "1");
 	ObjMgr->AddObject(new MenuSelect(2), "1");
 	ObjMgr->AddObject(new MenuSelect(3), "1");
 	ObjMgr->AddObject(new MenuSelect(4), "1");
-	ObjMgr->AddObject(new MenuSelect(5), "1");
 
 }
 
