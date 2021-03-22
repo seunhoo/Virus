@@ -34,11 +34,11 @@ void MainScene::Update(float deltaTime, float time)
 	{
 		for (int j = 0; j <= 1080; j += 90)
 		{
-			ObjMgr->AddObject(new HLine(1920/2, j), "HLine");
+			//ObjMgr->AddObject(new HLine(1920/2, j), "HLine");
 		}
 		for (int i = 0; i <= 1920; i += 120)
 		{ 
-			ObjMgr->AddObject(new VLine(i, 1080 / 2), "VLine");
+			//ObjMgr->AddObject(new VLine(i, 1080 / 2), "VLine");
 
 			if (i >= 1920)
 			{

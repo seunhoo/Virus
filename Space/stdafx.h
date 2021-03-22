@@ -16,6 +16,7 @@ inline void SafeDelete(T*& x);
 #include<d3d9.h>
 #include<d3dx9.h>
 #include<map>
+#include<stdlib.h>
 #include<list>
 #include<ctime>
 #include<vector>

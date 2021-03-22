@@ -37,6 +37,9 @@ public:
 	void SetDestroy(bool destroy) { m_Destroy = destroy; }
 	void SetTag(const std::string tag);
 	void SetParent(Object* obj);
+	void SetPosition(Vec2 pos) { m_Position = pos; }
+	void SetScale(float x, float y) { m_Scale.x = x; m_Scale.y = y; }
+	void SetScale(Vec2 pos) { m_Scale = pos; }
 public:
 	bool GetDestroy() { return m_Destroy; }
 };                                                                                                                                                                                         
