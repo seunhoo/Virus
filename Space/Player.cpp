@@ -328,8 +328,8 @@ void Player::Render()
 		float scaley = (m_PlayerPos[2].y - m_PlayerPos[0].y) / 10;
 		ObjMgr->AddObject(new Square(Vec2(posx, posy), Vec2(scalex, scaley)), "Square");
 
-		i = 0;
-		m_Length = 1;
+		i = 1;
+		m_Length = 2;
 		m_Square = false;
 	}
 

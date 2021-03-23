@@ -120,7 +120,7 @@ void Monster::Update(float deltatime, float time)
 		int x8 = m_bPlayer->m_PlayerPos[3].x > m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
 		int y8 = m_bPlayer->m_PlayerPos[3].y > m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
 
-		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 9)
+		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 10)
 		{
 			if (m_CollideCheck == false)
 			{
