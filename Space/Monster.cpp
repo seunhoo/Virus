@@ -92,7 +92,7 @@ void Monster::Update(float deltatime, float time)
 
 
 
-	if ((
+	if (m_bPlayer->i >=1 && m_bPlayer->m_Length >=2 && (
 		(dist == 0 && disk == 0) ||
 		(dist == 0 && disc == 0) ||
 		(dist == 0 && didr == 0) ||
@@ -120,7 +120,7 @@ void Monster::Update(float deltatime, float time)
 		int x8 = m_bPlayer->m_PlayerPos[3].x > m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
 		int y8 = m_bPlayer->m_PlayerPos[3].y > m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
 
-		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 10)
+		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 9)
 		{
 			if (m_CollideCheck == false)
 			{
@@ -128,7 +128,7 @@ void Monster::Update(float deltatime, float time)
 			}
 			m_CollideCheck = true;
 		}
-		else if (disc < 5 && m_Position.x >= x3 - 5 && m_Position.x <= x4 + 5 && m_Position.y >= y3 - 5 && m_Position.y <= y4 + 5)
+		else if (disc < 10 && m_Position.x >= x3 - 10 && m_Position.x <= x4 + 01 && m_Position.y >= y3 -10 && m_Position.y <= y4 + 9)
 		{
 			if (m_CollideCheck == false)
 			{
@@ -136,7 +136,7 @@ void Monster::Update(float deltatime, float time)
 			}
 			m_CollideCheck = true;
 		}
-		else if (disk < 5 && m_Position.x >= x5 - 5 && m_Position.x <= x6 + 5 && m_Position.y >= y5 - 5 && m_Position.y <= y6 + 5)
+		else if (disk < 10 && m_Position.x >= x5 - 10 && m_Position.x <= x6 + 10 && m_Position.y >= y5 - 10 && m_Position.y <= y6 + 9)
 		{
 			if (m_CollideCheck == false)
 			{
@@ -144,7 +144,7 @@ void Monster::Update(float deltatime, float time)
 			}
 			m_CollideCheck = true;
 		}
-		else if (didr < 5 && m_Position.x >= x7 - 5 && m_Position.x <= x8 + 5 && m_Position.y >= y7 - 5 && m_Position.y <= y8 + 5)
+		else if (didr < 10 && m_Position.x >= x7 - 10 && m_Position.x <= x8 + 10 && m_Position.y >= y7 - 10 && m_Position.y <= y8 + 9)
 		{
 			if (m_CollideCheck == false)
 			{
@@ -154,6 +154,7 @@ void Monster::Update(float deltatime, float time)
 		}
 		else
 		{
+			m_CollideCheck = false;
 		}
 	}
 	a = m_bPlayer->m_PlayerPos[0].y - m_bPlayer->m_PlayerPos[1].y;

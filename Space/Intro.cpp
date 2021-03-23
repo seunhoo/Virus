@@ -48,7 +48,7 @@ void Intro::Update(float deltatime, float time)
 		m_NextTime += dt;
 		m_Rotation += 30;
 
-		if (m_NextTime >= 3)
+		if (m_NextTime >= 1)
 		{
 			ObjMgr->RemoveObject(this);
 			SceneDirector::GetInst()->ChangeScene(new MenuScene());
