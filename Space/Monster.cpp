@@ -13,59 +13,110 @@ Monster::Monster(int Version)
 	,disc(30)
 	,didr(30)
 {
-	srand(time(NULL));
+	
 	m_Version = Version;
-	if (Version == 1)
+	if (m_Version == 1)
 	{
-		m_Monster = Sprite::Create(L"Painting/SpeedMonster.png");
+		m_Monster = Sprite::Create(L"Painting/SpeedMonster1.png");
 		m_Monster->SetParent(this);
 
 		int randomx = rand() % 1900 + 10;
 		int randomy = rand() % 1070 + 10;
-
+		printf("%d %d \n", randomx, randomy);
 		SetPosition(randomx, randomy);
 
 		m_BossCheck = false;
 	}
-	else if (Version == 2)
+	else if (m_Version == 2)
 	{
-		m_Monster = Sprite::Create(L"Painting/BigMonster.png");
+		m_Monster = Sprite::Create(L"Painting/BigMonster1.png");
 		m_Monster->SetParent(this);
 
 		int randomx = rand() % 1900 + 10;
 		int randomy = rand() % 1070 + 10;
-
+		printf("%d %d \n", randomx, randomy);
 		SetPosition(randomx, randomy);
 
 		m_BossCheck = false;
 	}
-	else if (Version == 3)
+	else if (m_Version == 3)
 	{
-		m_Monster = Sprite::Create(L"Painting/FlashMonster.png");
+		m_Monster = Sprite::Create(L"Painting/FlashMonster1.png");
 		m_Monster->SetParent(this);
-
-		int randomx = rand() % 1900 + 10;
-		int randomy = rand() % 1070 + 10;
-
-		SetPosition(randomx, randomy);
+		
+		int randox = rand() % 1900 + 10;
+		int randoy = rand() % 1070 + 10;
+		printf("%d %d \n", randox, randoy);
+		SetPosition(randox, randoy);
 
 		m_BossCheck = false;
 	}
-	else if (Version == 4)
+	else if (m_Version == 4)
 	{
 		m_Monster = Sprite::Create(L"Painting/Boss.png");
 		m_Monster->SetParent(this);
 
 		int randomx = rand() % 1900 + 10;
 		int randomy = rand() % 1070 + 10;
-
+		printf("%d %d \n", randomx, randomy);
 		SetPosition(randomx, randomy);
 		m_BossCheck = true;
 	}
 
-	m_bPlayer = new Player();
 	
 	
+}
+
+Monster::Monster(int version, Vec2 pos)
+{
+	//m_Version = version;
+	//if (Version == 1)
+	//{
+	//	m_Monster = Sprite::Create(L"Painting/SpeedMonster1.png");
+	//	m_Monster->SetParent(this);
+
+	//	int randomx = rand() % 1900 + 10;
+	//	int randomy = rand() % 1070 + 10;
+	//	printf("%d %d \n", randomx, randomy);
+	//	SetPosition(randomx, randomy);
+
+	//	m_BossCheck = false;
+	//}
+	//if (Version == 2)
+	//{
+	//	m_Monster = Sprite::Create(L"Painting/BigMonster1.png");
+	//	m_Monster->SetParent(this);
+
+	//	int randomx = rand() % 1900 + 10;
+	//	int randomy = rand() % 1070 + 10;
+	//	printf("%d %d \n", randomx, randomy);
+	//	SetPosition(randomx, randomy);
+
+	//	m_BossCheck = false;
+	//}
+	//if (Version == 3)
+	//{
+	//	m_Monster = Sprite::Create(L"Painting/FlashMonster1.png");
+	//	m_Monster->SetParent(this);
+
+	//	int randox = rand() % 1900 + 10;
+	//	int randoy = rand() % 1070 + 10;
+	//	printf("%d %d \n", randox, randoy);
+	//	SetPosition(randox, randoy);
+
+	//	m_BossCheck = false;
+	//}
+	//if (Version == 4)
+	//{
+	//	m_Monster = Sprite::Create(L"Painting/Boss.png");
+	//	m_Monster->SetParent(this);
+
+	//	int randomx = rand() % 1900 + 10;
+	//	int randomy = rand() % 1070 + 10;
+	//	printf("%d %d \n", randomx, randomy);
+	//	SetPosition(randomx, randomy);
+	//	m_BossCheck = true;
+	//}
 }
 
 void Monster::Update(float deltatime, float time)
@@ -91,91 +142,6 @@ void Monster::Update(float deltatime, float time)
 	}
 
 
-
-	if (m_bPlayer->i >=1 && m_bPlayer->m_Length >=2 && (
-		(dist == 0 && disk == 0) ||
-		(dist == 0 && disc == 0) ||
-		(dist == 0 && didr == 0) ||
-		(disc == 0 && didr == 0) ||
-		(disc == 0 && disk == 0) ||
-		(disk == 0 && didr == 0)))
-	{
-		int x1 = m_bPlayer->m_PlayerPos[0].x < m_bPlayer->m_PlayerPos[1].x ? m_bPlayer->m_PlayerPos[0].x : m_bPlayer->m_PlayerPos[1].x;
-		int y1 = m_bPlayer->m_PlayerPos[0].y < m_bPlayer->m_PlayerPos[1].y ? m_bPlayer->m_PlayerPos[0].y : m_bPlayer->m_PlayerPos[1].y;
-		int x2 = m_bPlayer->m_PlayerPos[0].x > m_bPlayer->m_PlayerPos[1].x ? m_bPlayer->m_PlayerPos[0].x : m_bPlayer->m_PlayerPos[1].x;
-		int y2 = m_bPlayer->m_PlayerPos[0].y > m_bPlayer->m_PlayerPos[1].y ? m_bPlayer->m_PlayerPos[0].y : m_bPlayer->m_PlayerPos[1].y;
-
-		int x3 = m_bPlayer->m_PlayerPos[1].x < m_bPlayer->m_PlayerPos[2].x ? m_bPlayer->m_PlayerPos[1].x : m_bPlayer->m_PlayerPos[2].x;
-		int y3 = m_bPlayer->m_PlayerPos[1].y < m_bPlayer->m_PlayerPos[2].y ? m_bPlayer->m_PlayerPos[1].y : m_bPlayer->m_PlayerPos[2].y;
-		int x4 = m_bPlayer->m_PlayerPos[1].x > m_bPlayer->m_PlayerPos[2].x ? m_bPlayer->m_PlayerPos[1].x : m_bPlayer->m_PlayerPos[2].x;
-		int y4 = m_bPlayer->m_PlayerPos[1].y > m_bPlayer->m_PlayerPos[2].y ? m_bPlayer->m_PlayerPos[1].y : m_bPlayer->m_PlayerPos[2].y;
-
-		int x5 = m_bPlayer->m_PlayerPos[2].x < m_bPlayer->m_PlayerPos[3].x ? m_bPlayer->m_PlayerPos[2].x : m_bPlayer->m_PlayerPos[3].x;
-		int y5 = m_bPlayer->m_PlayerPos[2].y < m_bPlayer->m_PlayerPos[3].y ? m_bPlayer->m_PlayerPos[2].y : m_bPlayer->m_PlayerPos[3].y;
-		int x6 = m_bPlayer->m_PlayerPos[2].x > m_bPlayer->m_PlayerPos[3].x ? m_bPlayer->m_PlayerPos[2].x : m_bPlayer->m_PlayerPos[3].x;
-		int y6 = m_bPlayer->m_PlayerPos[2].y > m_bPlayer->m_PlayerPos[3].y ? m_bPlayer->m_PlayerPos[2].y : m_bPlayer->m_PlayerPos[3].y;
-
-		int x7 = m_bPlayer->m_PlayerPos[3].x < m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
-		int y7 = m_bPlayer->m_PlayerPos[3].y < m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
-		int x8 = m_bPlayer->m_PlayerPos[3].x > m_bPlayer->m_PlayerPos[4].x ? m_bPlayer->m_PlayerPos[3].x : m_bPlayer->m_PlayerPos[4].x;
-		int y8 = m_bPlayer->m_PlayerPos[3].y > m_bPlayer->m_PlayerPos[4].y ? m_bPlayer->m_PlayerPos[3].y : m_bPlayer->m_PlayerPos[4].y;
-
-		if (dist < 10 && m_Position.x >= x1 - 10 && m_Position.x <= x2 + 10 && m_Position.y >= y1 - 10 && m_Position.y <= y2 + 10)
-		{
-			if (m_CollideCheck == false)
-			{
-				m_bPlayer->m_PlayerHp -= 1;
-			}
-			m_CollideCheck = true;
-		}
-		else if (disc < 10 && m_Position.x >= x3 - 10 && m_Position.x <= x4 + 01 && m_Position.y >= y3 -10 && m_Position.y <= y4 + 9)
-		{
-			if (m_CollideCheck == false)
-			{
-				m_bPlayer->m_PlayerHp -= 1;
-			}
-			m_CollideCheck = true;
-		}
-		else if (disk < 10 && m_Position.x >= x5 - 10 && m_Position.x <= x6 + 10 && m_Position.y >= y5 - 10 && m_Position.y <= y6 + 9)
-		{
-			if (m_CollideCheck == false)
-			{
-				m_bPlayer->m_PlayerHp -= 1;
-			}
-			m_CollideCheck = true;
-		}
-		else if (didr < 10 && m_Position.x >= x7 - 10 && m_Position.x <= x8 + 10 && m_Position.y >= y7 - 10 && m_Position.y <= y8 + 9)
-		{
-			if (m_CollideCheck == false)
-			{
-				m_bPlayer->m_PlayerHp -= 1;
-			}
-			m_CollideCheck = true;
-		}
-		else
-		{
-			m_CollideCheck = false;
-		}
-	}
-	a = m_bPlayer->m_PlayerPos[0].y - m_bPlayer->m_PlayerPos[1].y;
-	b = m_bPlayer->m_PlayerPos[1].x - m_bPlayer->m_PlayerPos[0].x;
-	c = m_bPlayer->m_PlayerPos[0].x * m_bPlayer->m_PlayerPos[1].y - m_bPlayer->m_PlayerPos[1].x * m_bPlayer->m_PlayerPos[0].y;
-	dist = (float)std::abs(a * m_Position.x + b * m_Position.y + c) / (float)std::sqrt(a * a + b * b);
-
-	d = m_bPlayer->m_PlayerPos[1].y - m_bPlayer->m_PlayerPos[2].y;
-	e = m_bPlayer->m_PlayerPos[2].x - m_bPlayer->m_PlayerPos[1].x;
-	f = m_bPlayer->m_PlayerPos[1].x * m_bPlayer->m_PlayerPos[2].y - m_bPlayer->m_PlayerPos[2].x * m_bPlayer->m_PlayerPos[1].y;
-	disk = (float)std::abs(d * m_Position.x + e * m_Position.y + f) / (float)std::sqrt(d * d + e * e);
-
-	g = m_bPlayer->m_PlayerPos[2].y - m_bPlayer->m_PlayerPos[3].y;
-	h = m_bPlayer->m_PlayerPos[3].x - m_bPlayer->m_PlayerPos[2].x;
-	j = m_bPlayer->m_PlayerPos[2].x * m_bPlayer->m_PlayerPos[3].y - m_bPlayer->m_PlayerPos[3].x * m_bPlayer->m_PlayerPos[2].y;
-	disc = (float)std::abs(g * m_Position.x + h * m_Position.y + j) / (float)std::sqrt(g * g + h * h);
-
-	k = m_bPlayer->m_PlayerPos[3].y - m_bPlayer->m_PlayerPos[4].y;
-	l = m_bPlayer->m_PlayerPos[4].x - m_bPlayer->m_PlayerPos[3].x;
-	m = m_bPlayer->m_PlayerPos[3].x * m_bPlayer->m_PlayerPos[4].y - m_bPlayer->m_PlayerPos[4].x * m_bPlayer->m_PlayerPos[3].y;
-	didr = (float)std::abs(k * m_Position.x + l * m_Position.y + m) / (float)std::sqrt(k * k + l * l);
 
 
 }

@@ -9,6 +9,7 @@ public:
 	Player* m_bPlayer;
 
 	Monster(int version);
+	Monster(int version, Vec2 pos);
 	
 	int m_Version;
 

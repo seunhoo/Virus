@@ -19,7 +19,7 @@ MainScene::~MainScene()
 void MainScene::Init()
 {
 	//ObjMgr->AddObject(new asd(), "123");
-	m_Sprite = Sprite::Create(L"Painting/Back1.png");
+	m_Sprite = Sprite::Create(L"Painting/Back3.png");
 	m_Sprite->SetPosition(1920 / 2, 1080 / 2);
 
 }
@@ -28,7 +28,7 @@ void MainScene::Release()
 {
 }
 
-void MainScene::Update(float deltaTime, float time)
+void MainScene::Update(float deltaTime, float Time)
 {
 	if (m_Check == false)
 	{
@@ -42,6 +42,7 @@ void MainScene::Update(float deltaTime, float time)
 
 			if (i >= 1920)
 			{
+
 				ObjMgr->AddObject(new Monster(1), "SpeedMonster");
 				ObjMgr->AddObject(new Monster(2), "BigMonster");
 				ObjMgr->AddObject(new Monster(3), "FlashMonster");
@@ -54,6 +55,18 @@ void MainScene::Update(float deltaTime, float time)
 			}
 		}
 	}
+
+	if (INPUT->GetKey(VK_F9) == KeyState::UP)
+	{
+		m_Sprite = Sprite::Create(L"Painting/Back4.png");
+		m_Sprite->SetPosition(1920 / 2, 1080 / 2);
+	}
+	if (INPUT->GetKey(VK_F10) == KeyState::UP)
+	{
+		m_Sprite = Sprite::Create(L"Painting/Back3.png");
+		m_Sprite->SetPosition(1920 / 2, 1080 / 2);
+	}
+	
 
 
 
